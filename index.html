@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Guay</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        select {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        select:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            background: #ff7e5f;
+            color: #fff;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: #feb47b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Elige tu opción!</h1>
+        <select id="miDesplegable">
+            <option value="" disabled selected>EN QUE AÑO ESTÁS?</option>
+            <option value="pagina1.html">1ºGEI</option>
+            <option value="pagina2.html">2ºGEI</option>
+            <option value="pagina3.html">3ºGEI</option>
+            <option value="pagina4.html">4ºGEI</option>
+        </select>
+        <br>
+        <button onclick="redirigir()">Confirmar</button>
+    </div>
+
+    <script>
+        function redirigir() {
+            const select = document.getElementById('miDesplegable');
+            const valor = select.value;
+            if (valor) {
+                // redirige a la página que corresponda
+                window.location.href = valor;
+            } else {
+                alert("Por favor selecciona una opción.");
+            }
+        }
+    </script>
+</body>
+</html>
