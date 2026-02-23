@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2º GEI - Asignaturas</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to right, #2575fc, #6a11cb);
+        color: #fff;
+        margin: 0;
+        padding: 20px;
+    }
+
+    header {
+        background: rgba(0,0,0,0.6);
+        padding: 20px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+        border-bottom: 2px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    .asignatura {
+        margin: 20px 0;
+        padding: 10px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        transition: transform 0.2s, background 0.2s;
+    }
+
+    .asignatura:hover {
+        background: rgba(255,255,255,0.3);
+        transform: scale(1.02);
+    }
+
+    select, button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+        outline: none;
+    }
+
+    button {
+        background: #ff7e5f;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 10px;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+        background: #feb47b;
+        transform: scale(1.05);
+    }
+
+    a.volver {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #ff7e5f;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    a.volver:hover {
+        background: #feb47b;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+
+<header>Asignaturas de 2º GEI</header>
+
+<div class="container">
+
+    <!-- Base de dades -->
+    <div class="asignatura">
+        <h2>Base de dades</h2>
+        <select id="bd">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="base_de_dades/Apuntes.pdf">Apuntes</option>
+            <option value="base_de_dades/Ejercicios.pdf">Ejercicios</option>
+        </select>
+        <button onclick="abrirPDF('bd')">Abrir PDF</button>
+    </div>
+
+    <!-- Estructura de Dades -->
+    <div class="asignatura">
+        <h2>Estructura de Dades</h2>
+        <select id="ed">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="estructura_de_dades/Apuntes.pdf">Apuntes</option>
+            <option value="estructura_de_dades/Ejercicios.pdf">Ejercicios</option>
+        </select>
+        <button onclick="abrirPDF('ed')">Abrir PDF</button>
+    </div>
+
+    <!-- Sistemes Operatius -->
+    <div class="asignatura">
+        <h2>Sistemes Operatius</h2>
+        <select id="so">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="demo-gen-2024_solution.pdf">Parcial 2 2024 demo</option>
+            <option value="parcial-gen-2024_solution.pdf">Parcial 2 2024</option>
+            <option value="parcial-gen-2025_solution.pdf">Parcial 2 2025</option>
+            <option value="parcial-gen-2026_solution.pdf">Parcial 2 2026</option>
+            <option value="demo-nov-2024_solution.pdf">Parcial 1 2024 demo</option>
+            <option value="parcial-nov-2024_solution.pdf">Parcial 1 2024</option>
+            <option value="parcial-nov-2025_solution-v2_solution.pdf">Parcial 1 2025</option>
+        </select>
+        <button onclick="abrirPDF('so')">Abrir PDF</button>
+    </div>
+
+    <!-- Matemàtica Discreta -->
+    <div class="asignatura">
+        <h2>Matemàtica Discreta</h2>
+        <select id="md">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="matematica_discreta/Apuntes.pdf">Apuntes</option>
+            <option value="matematica_discreta/Ejercicios.pdf">Ejercicios</option>
+        </select>
+        <button onclick="abrirPDF('md')">Abrir PDF</button>
+    </div>
+
+    <!-- Arquitectura de Computadors -->
+    <div class="asignatura">
+        <h2>Arquitectura de Computadors</h2>
+        <select id="ac">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="arquitectura_de_computadors/Apuntes.pdf">Apuntes</option>
+        </select>
+        <button onclick="abrirPDF('ac')">Abrir PDF</button>
+    </div>
+
+    <!-- Interacció Persona Ordinador -->
+    <div class="asignatura">
+        <h2>Interacció Persona Ordinador</h2>
+        <select id="ipo">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="2-Introducció.pdf">Introducció</option>
+            <option value="3-LAB-Anàlisi-de-requisits.pdf">LAB Anàlisi de Requisits</option>
+            <option value="4-Disseny-centrat-en-usuari.pdf">Disseny Centrat en l'Usuari</option>
+            <option value="5-Prototipat.pdf">Prototipat</option>
+        </select>
+        <button onclick="abrirPDF('ipo')">Abrir PDF</button>
+    </div>
+
+    <!-- Xarxes -->
+    <div class="asignatura">
+        <h2>Xarxes</h2>
+        <select id="xarxes">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="xarxes/Apuntes.pdf">Apuntes</option>
+        </select>
+        <button onclick="abrirPDF('xarxes')">Abrir PDF</button>
+    </div>
+
+    <!-- Algoritmica i Complexitat -->
+    <div class="asignatura">
+        <h2>Algoritmica i Complexitat</h2>
+        <select id="acomp">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="algoritmica_i_complexitat/Apuntes.pdf">Apuntes</option>
+        </select>
+        <button onclick="abrirPDF('acomp')">Abrir PDF</button>
+    </div>
+
+    <!-- Llenguatges Autòmats i Gramàtics -->
+    <div class="asignatura">
+        <h2>Llenguatges Autòmats i Gramàtics</h2>
+        <select id="lag">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="llenguatges_automats_i_gramatics/Apuntes.pdf">Apuntes</option>
+        </select>
+        <button onclick="abrirPDF('lag')">Abrir PDF</button>
+    </div>
+
+    <a href="pagsegundo.html" class="volver">← Volver a Recursos 2º GEI</a>
+</div>
+
+<script>
+function abrirPDF(id) {
+    const select = document.getElementById(id);
+    const pdf = select.value;
+    if(pdf) {
+        window.open(pdf, '_blank');
+    } else {
+        alert("Por favor selecciona un PDF.");
+    }
+}
+</script>
+
+</body>
+</html>
