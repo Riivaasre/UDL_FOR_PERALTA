@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1º GEI - Asignaturas</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to right, #2575fc, #6a11cb);
+        color: #fff;
+        margin: 0;
+        padding: 20px;
+    }
+
+    header {
+        background: rgba(0,0,0,0.6);
+        padding: 20px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+        border-bottom: 2px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    .asignatura {
+        margin: 20px 0;
+        padding: 10px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        transition: transform 0.2s, background 0.2s;
+    }
+
+    .asignatura:hover {
+        background: rgba(255,255,255,0.3);
+        transform: scale(1.02);
+    }
+
+    select, button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+        outline: none;
+    }
+
+    button {
+        background: #ff7e5f;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 10px;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+        background: #feb47b;
+        transform: scale(1.05);
+    }
+
+    a.volver {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #ff7e5f;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    a.volver:hover {
+        background: #feb47b;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+
+<header>Asignaturas de 1º GEI</header>
+
+<div class="container">
+    
+    <div class="asignatura">
+        <h2>Lògica Computacional</h2>
+        <select id="logica">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="logica_computacional/Guia_Inicial.pdf">Guía inicial</option>
+            <option value="logica_computacional/Ejercicios.pdf">Ejercicios</option>
+            <option value="logica_computacional/Resueltos.pdf">Resueltos</option>
+        </select>
+        <button onclick="abrirPDF('logica')">Abrir PDF</button>
+    </div>
+
+    <div class="asignatura">
+        <h2>Estructura de Computadors I</h2>
+        <select id="ec1">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="estructura_de_computadors_I/Apuntes.pdf">Apuntes</option>
+            <option value="estructura_de_computadors_I/Ejercicios.pdf">Ejercicios</option>
+        </select>
+        <button onclick="abrirPDF('ec1')">Abrir PDF</button>
+    </div>
+
+    <div class="asignatura">
+        <h2>Estructura de Computadors II</h2>
+        <select id="ec2">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="estructura_de_computadors_II/Apuntes.pdf">Apuntes</option>
+            <option value="estructura_de_computadors_II/Ejercicios.pdf">Ejercicios</option>
+        </select>
+        <button onclick="abrirPDF('ec2')">Abrir PDF</button>
+    </div>
+
+    <div class="asignatura">
+        <h2>Algebra</h2>
+        <select id="algebra">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="algebra/Curs-zero-de-matematiques-per-a-lenginyeria.pdf">Curs Zero</option>
+            <option value="algebra/Presentacio-ÀLGEBRA.pdf">Presentación</option>
+            <option value="algebra/recull-problemes-i-solucions.pdf">Problemas y soluciones</option>
+            <option value="algebra/1-conjunts-DIAPOS.pdf">Tema 1</option>
+            <option value="algebra/2-aplicacions-DIAPOS.pdf">Tema 2 Aplicaciones</option>
+            <option value="algebra/2-relacions-DIAPOS.pdf">Tema 2 Relaciones</option>
+            <option value="algebra/4-induccio-DIAPOS.pdf">Inducción</option>
+            <option value="algebra/Tema6-Enters-Criptografia-Teoria-1.pdf">Criptografía 1</option>
+            <option value="algebra/Tema6-Enters-Criptografia-Teoria.pdf">Criptografía 2</option>
+        </select>
+        <button onclick="abrirPDF('algebra')">Abrir PDF</button>
+    </div>
+
+    <div class="asignatura">
+        <h2>Programació I</h2>
+        <select id="prog1">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="programacio_I/Apuntes.pdf">Apuntes</option>
+            <option value="programacio_I/Ejercicios.pdf">Ejercicios</option>
+        </select>
+        <button onclick="abrirPDF('prog1')">Abrir PDF</button>
+    </div>
+
+    <div class="asignatura">
+        <h2>Programació II</h2>
+        <select id="prog2">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="programacio_II/Apuntes.pdf">Apuntes</option>
+            <option value="programacio_II/Ejercicios.pdf">Ejercicios</option>
+        </select>
+        <button onclick="abrirPDF('prog2')">Abrir PDF</button>
+    </div>
+
+    <div class="asignatura">
+        <h2>Organització Empresarial</h2>
+        <select id="oe">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="organitzacio_empresarial/Apuntes.pdf">Apuntes</option>
+        </select>
+        <button onclick="abrirPDF('oe')">Abrir PDF</button>
+    </div>
+
+    <div class="asignatura">
+        <h2>Estadística i Optimització</h2>
+        <select id="eo">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="estadistica_i_optimitzacio/Apuntes.pdf">Apuntes</option>
+        </select>
+        <button onclick="abrirPDF('eo')">Abrir PDF</button>
+    </div>
+
+    <div class="asignatura">
+        <h2>Física</h2>
+        <select id="fisica">
+            <option value="" disabled selected>Selecciona un PDF</option>
+            <option value="fisica/Fisica.pdf">Apuntes</option>
+        </select>
+        <button onclick="abrirPDF('fisica')">Abrir PDF</button>
+    </div>
+
+    <a href="pagprimero.html" class="volver">← Volver a Recursos 1º GEI</a>
+</div>
+
+<script>
+function abrirPDF(id) {
+    const select = document.getElementById(id);
+    const pdf = select.value;
+    if(pdf) {
+        window.open(pdf, '_blank'); // abre en nueva pestaña
+    } else {
+        alert("Por favor selecciona un PDF.");
+    }
+}
+</script>
+
+</body>
+</html>
